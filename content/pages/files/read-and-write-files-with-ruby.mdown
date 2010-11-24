@@ -1,0 +1,28 @@
+read more: Read more about files
+date: Tue Nov 23 11:55:05 +0200 2010
+categories: files
+
+# Read and write files with Ruby
+
+####  Short way
+<pre class="ruby"># Read the file
+File.open('/path/to/file.txt', 'r') {|f| f.read }
+
+# Write to file
+content = "Lorem ipsum dolor sit amet..."
+File.open('/path/to/file.txt', 'w') {|f| f.write content }
+</pre>
+
+#### Long way
+<pre class="ruby"># Read the file
+fp = File.open('/path/to/file.txt', 'r')
+contents = fp.read
+fp.close
+
+# Write to file
+contents = "Lorem ipsum dolor sit amet..."
+fp = File.open('/path/to/file.txt', 'w')
+fp.write contents
+fp.close
+</pre>
+

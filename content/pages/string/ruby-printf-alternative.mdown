@@ -1,0 +1,15 @@
+description: Pick a random element in Ruby array
+categories: strings
+date: Tue Nov 23 14:16:20 EET 2010
+
+
+#Ruby printf alternative
+
+Syntax is similar to <a href="http://www.cplusplus.com/reference/clibrary/cstdio/printf/">printf</a> function in C language.
+
+<pre class="ruby">str = "I have %d %s." % [3+5, "bananas"]
+# => I have 8 bananas.
+
+str = "739 in HEX will be %x" % 739
+# => 739 in HEX will be 2e3
+</pre>

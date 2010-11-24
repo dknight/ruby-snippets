@@ -1,0 +1,15 @@
+description: Rot13 function in Ruby
+date: Tue Nov 23 14:51:29 EET 2010
+categories: strings, encryption
+
+#Rot13 with Ruby
+
+<pre class="ruby">class String
+  def rot13
+    self.tr("A-Ma-mN-Zn-z","N-Zn-zA-Ma-m")
+  end
+end
+
+#Tryout
+"Hello".rot13 # => Uryyb
+</pre>

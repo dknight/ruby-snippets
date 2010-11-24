@@ -1,0 +1,39 @@
+read more: Learn how to parse CSV data in Ruby
+date: Tue Nov 23 16:40:05 +0200 2010
+categories: files,strings
+
+# Parsing CSV data
+
+#### Standard CSV library
+<pre class="ruby">require 'csv'
+
+CSV.open('/path/to/file.csv', 'r', ';') do |row|
+  puts row
+end
+</pre>
+
+
+#### Parsing with the FasterCSV library
+<pre class="ruby">require 'rubygems'
+require 'faster_csv'
+
+FasterCSV.foreach('/path/to/file.csv', :quote_char => '"', :col_sep =>';', :row_sep =>:auto) do |row|
+  puts row[0]
+end
+</pre>
+
+#### Parsing with the ccsv library
+[ccsv on GitHub](http://github.com/fauna/ccsv/tree/master)
+<pre class="ruby">require 'rubygems'
+require 'ccsv'
+Ccsv.foreach('/path/to/file.csv') do |values|
+ puts values
+end
+</pre>
+
+#### Parse with standard methods
+<pre class="ruby">lines = File.open('/path/to/file.csv') {|f| f.read }
+lines.each do |line|
+  puts line.split(/,|;/) # => Array
+end
+</pre>

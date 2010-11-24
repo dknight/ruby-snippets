@@ -1,0 +1,27 @@
+description: Extending object in Ruby
+categories: oop
+date: Tue Nov 23 16:17:55 EET 2010
+
+# Extend object
+
+<pre class="ruby">module EvilCat
+ def roar
+   "Rrrrrrrr!"
+ end
+ def meow
+   "Miauuu!"
+ end
+end
+
+class Cat
+ def meow
+   "Meoowwww!"
+ end
+end
+
+c = Cat.new
+c.meow              #=> "Meoowwww!"
+c.extend(EvilCat)   #=> #&lt;Cat:0x401b3bc&gt;
+c.roar              #=> "Rrrrrrrr!"
+c.meow              #=> "Miauuu!"
+</pre>

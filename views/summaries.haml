@@ -1,0 +1,19 @@
+- unless pages.empty?
+  .pages
+    - pages.each do |page|
+      - haml_tag heading do
+        %a{ :href => page.abspath }= page.heading
+      - if page.date
+        .metadata
+          = format_date(page.date)
+          &nbsp;
+          %strong Categories:
+          - unless page.categories.empty?
+            - page.categories.each do |category|
+              %a{ :href => category.abspath }= category.heading
+      - if page.summary.nil? || page.summary.empty?
+        ~ ruby_syntax page.body
+      - else
+        ~ page.summary
+        %p.read_more
+          %a{ :href => page.abspath }= page.read_more

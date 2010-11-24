@@ -1,0 +1,44 @@
+description: The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other.
+categories: strings
+date: Tue Nov 23 13:53:55 EET 2010
+
+#Levenshtein distance
+
+The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character. It is named after Vladimir Levenshtein, who considered this distance in 1965.
+
+<pre class="ruby">class String
+
+  def levenstein(other, ins=2, del=1, sub=1)
+
+    return nil if self.nil? || other.nil?
+
+    dm = []
+    dm[0] = (0..self.length).collect { |i| i * ins}
+    fill = [0] * (self.length - 1)
+
+    for i in 1..other.length
+      dm[i] = [i * del, fill.flatten] 
+    end
+
+    for i in 1..other.length
+      for j in 1..self.length
+        dm[i][j] = [
+          dm[i-1][j-1] + (self[i-1] == other[i-1] ? 0 : sub),
+          dm[i][j-1] + ins,
+          dm[i-1][j] + del
+          ].min
+      end
+    end
+
+    dm[other.length][self.length]
+  end
+
+  def similar?(other, thresh = 2)
+    self.levenstein(other) &lt; thresh
+  end
+
+end
+
+# Tryout
+"Foobar".similar?("Fuubar", 3) # => true
+</pre>

@@ -1,0 +1,13 @@
+read more: Read more about files
+date: Tue Nov 23 11:55:05 +0200 2010
+categories: files
+
+# Delete files
+
+<pre class="ruby"># Delete the file
+File.unlink('/path/to/file.txt')
+
+# Or use delete method (alias of File#unlink)
+File.delete('/path/to/file.txt')
+</pre>
+

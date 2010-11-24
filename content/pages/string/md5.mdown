@@ -1,0 +1,11 @@
+date: Tue Nov 23 14:38:05 EET 2010
+description: Calculate MD5 hash in ruby
+categories: strings, encryption
+
+# MD5 digest
+
+<pre class="ruby">require 'digest/md5'
+string = "Apple"
+digest = Digest::MD5.hexdigest(string)
+puts digest # => 9f6290f4436e5a2351f12e03b6433c3c
+</pre>

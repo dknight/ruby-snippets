@@ -1,0 +1,32 @@
+!!! Strict
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:name => "author", :content => "Dmitri Smirnov"}/
+    - if @description
+      %meta{ "name" => "description", "content" => @description }
+    - if @keywords
+      %meta{ "name" => "keywords", "content" => @keywords }
+    %title= @title
+    %link{:charset => "utf-8", :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:charset => "utf-8", :href => "/css/syntax.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{ :href => "/articles.xml", :rel => "alternate", :type => "application/atom+xml" }
+  %body
+    #wrapper
+      #header
+        #logo
+          %a{:href => "/"}
+            %img{:alt => "", :src => "/images/ruby_logo.png"}/
+        %h1= @heading
+        %h2= @subtitle
+        = haml :social, :layout => false
+      #content
+        .col1
+          = yield
+        .col2
+          = haml :sidebar, :layout => false
+      .clearer
+      
+      #footer
+        &copy; #{Time.now.year}
+        %a{:href => "http://www.dmitri.me/"} Dmitri Smirnov

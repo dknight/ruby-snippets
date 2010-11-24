@@ -1,0 +1,24 @@
+description: Randomining (Shuffling) array in ruby
+categories: arrays
+date: Tue Nov 23 16:22:20 EET 2010
+
+# Randomining (Shuffling) array in Ruby
+
+<pre class="ruby">class Array
+  def shuffle
+    sort_by { rand }
+  end
+
+  def shuffle!
+    self.replace shuffle
+  end
+end
+
+# Tryout
+numbers = [1,2,3,4,5]
+numbers.shuffle # => [4, 2, 3, 1, 5]
+
+# The same as above but "in place"
+numbers.shuffle!
+</pre>
+

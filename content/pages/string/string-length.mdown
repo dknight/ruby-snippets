@@ -1,0 +1,22 @@
+date: Tue Nov 23 15:46:05 EET 2010
+description: Calculate MD5 hash in ruby
+categories: strings
+
+# String length
+
+<pre class="ruby">"Hello".length
+# => 5
+
+"Moo farm".size
+# => #8
+</pre>
+
+<h4>UTF-8 string length</h4>
+<pre class="ruby">require "jcode" #include utf-8 library
+
+"üõöä".jlength # => 4
+
+# common length function
+"üõöä".length # => 8  
+
+</pre>
