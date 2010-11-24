@@ -2,7 +2,7 @@ description: Extending object in Ruby
 categories: oop
 date: Tue Nov 23 16:17:55 EET 2010
 
-# Extend object
+# Extending the object
 
 <pre class="ruby">module EvilCat
  def roar
