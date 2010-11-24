@@ -1,0 +1,18 @@
+description: Extending single object in Ruby
+categories: oop
+date: Tue Nov 24 20:29:55 EET 2010
+
+# Extending single object
+
+<pre class="ruby">my_str  = "My string"
+our_str = "Our string"
+
+class &lt;&lt;my_str
+  def to_cat
+    self.gsub(/string/i, 'cat')
+  end
+end
+
+my_str.to_cat # => "My cat"
+our_str.your # => ERROR:  undefined method ‘your’ for "Our string":String
+</pre>
