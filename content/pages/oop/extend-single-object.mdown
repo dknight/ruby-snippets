@@ -14,5 +14,5 @@ class &lt;&lt;my_str
 end
 
 my_str.to_cat # => "My cat"
-our_str.your # => ERROR:  undefined method ‘your’ for "Our string":String
+our_str.to_cat # => ERROR:  undefined method ‘to_cat’ for "Our string":String
 </pre>
