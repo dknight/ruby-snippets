@@ -6,3 +6,14 @@ date: Tue Nov 25 12:53:55 EET 2010
 
 <pre class="ruby">"Hello world!".reverse # => "!dlrow olleH"
 </pre>
+
+<h4>Reverse UTF-8 string</h4>
+<pre class="ruby"># Redifine standard String#reverse method
+class String
+  def reverse
+    each_char.to_a.reverse.join
+  end
+end
+
+"Müüja".reverse # => "ajüüM"
+</pre>

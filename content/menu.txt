@@ -1,5 +1,6 @@
-files
-strings
 arrays
+files
 encryption
 oop
+strings
+text
