@@ -1,0 +1,16 @@
+date: Tue Nov 27 14:38:05 EET 2010
+description: Ranges in Ruby
+categories: syntax
+
+# Ranges
+
+<pre class="ruby">range1 = (0..9) # includes 9
+range2 = (0...0) # excludes 9
+
+# There is a method to check if end is excluded
+range1.exclude_end? # => false
+range2.exclude_end? # => true
+
+# Characters can be set in ranges as well
+('a'..'e').to_a # => ['a', 'b', 'c', 'd', 'e']
+</pre>
