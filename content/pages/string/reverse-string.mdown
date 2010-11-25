@@ -1,0 +1,8 @@
+description: Standard method method to reverse string in Ruby
+categories: strings
+date: Tue Nov 25 12:53:55 EET 2010
+
+# Reverse string
+
+<pre class="ruby">"Hello world!".reverse # => "!dlrow olleH"
+</pre>
