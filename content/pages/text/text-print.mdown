@@ -1,6 +1,6 @@
 description: Beautiful text print with margins
 categories: strings, text
-date: Tue Nov 25 00:53:55 EET 2010
+date: Tue Nov 26 00:53:55 EET 2010
 
 # Beautiful text print with margins
 
