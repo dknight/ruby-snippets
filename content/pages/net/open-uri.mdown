@@ -1,0 +1,14 @@
+description: Open URI with ruby
+categories: net, strings
+date: Tue Nov 30 09:52:01 EET 2010
+
+# Open URI
+
+<pre class="ruby">require 'open-uri'
+
+open('http://www.google.com/') do |f|
+  f.each {|line| puts line }
+end
+</pre>
+
+
