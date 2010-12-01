@@ -1,0 +1,17 @@
+date: Wed Dec  1 13:36:51 EET 2010
+description: sequence string in ruby language
+categories: strings
+
+# Success a string
+
+Strings can also increment like numbers
+
+<pre class="ruby">str = 'a'
+str.succ! # => 'b'
+'xxy'.succ # => "xxz"
+</pre>
+
+#### Also UTF-8 based string can be also incremented
+
+<pre class="ruby">'хорошо'.succ # => "хорошп"
+</pre>
